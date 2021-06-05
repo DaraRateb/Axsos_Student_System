@@ -56,7 +56,8 @@
 					</script>
 				</div>
 
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="/login" method="POST">
+					{% csrf_token %}
 					<span class="login100-form-title">
 						Login
 					</span>
