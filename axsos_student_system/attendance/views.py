@@ -22,5 +22,5 @@ from django.shortcuts import render,redirect
 
 
 # Create your views here.
-def attendance(request):
-    return render(request,'attendance.html')
+# def attendance(request):
+#     return render(request,'attendance.html')
