@@ -36,7 +36,7 @@ class Request(models.Model):
     description=models.TextField(max_length=500)
     date=models.DateField()
     user_request = models.ForeignKey(User, related_name="request", on_delete = models.CASCADE)
-    requeststatus_request = models.ForeignKey(RequestStatus, related_name="status", on_delete = models.CASCADE)
+    requeststatus_request = models.ForeignKey(RequestStatus, related_name="status_foreign", on_delete = models.CASCADE)
     created_at=models.DateField(auto_now_add=True)
     updated_at=models.DateField(auto_now=True)
 
