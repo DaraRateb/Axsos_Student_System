@@ -9,6 +9,7 @@ class User(models.Model):
     first_name=models.CharField(max_length=255)
     last_name=models.CharField(max_length=255)
     phone_number=models.IntegerField()
+    image=models.ImageField(upload_to="img/%y",null=True)
     email=models.EmailField(max_length=225)
     password=models.CharField(max_length=225)
     role_user = models.ForeignKey(Role, related_name="user", on_delete = models.CASCADE)
