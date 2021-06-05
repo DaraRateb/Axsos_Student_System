@@ -20,5 +20,7 @@ from django.shortcuts import render,redirect
     
 #     return render(request,"login.html",{"img":img,"form":form})
 
-def index(request):
+def home(request):
     return render(request,'login.html')
+
+# Create your views here.
