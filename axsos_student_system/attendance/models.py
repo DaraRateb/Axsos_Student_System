@@ -8,7 +8,7 @@ class Role(models.Model):
 class User(models.Model):
     first_name=models.CharField(max_length=255)
     last_name=models.CharField(max_length=255)
-    phone_number=models.IntegerField()
+    phone_number=models.CharField(max_length=15)
     image=models.ImageField(upload_to="img/%y",null=True)
     email=models.EmailField(max_length=225)
     password=models.CharField(max_length=225)
