@@ -7,15 +7,17 @@ def home(request):
     return render(request,'login.html')
 
 def student(request):
-    if "email" not in request.session:
-        return redirect("/")
     context={
         "user":User.objects.get(email=request.session["email"]), 
     }
-    if request.session['email']=="ibtisal@axsos.me":
-        return render(request,"instructor_profile.html",context)
-    else:
-        return render(request,"student_profile.html",context)
+    return render(request,"student_profile.html",context)
+
+def instructor(request):
+
+    context={
+        "instructor":{"full_name":"Ibtisal Awashrah","phone_number":9088738973,"email":"ibtisal@axsos.me"}
+    }
+    return render(request,"instructor_profile.html",context)
     
 
 def login(request):
@@ -26,11 +28,17 @@ def login(request):
             # if bcrypt.checkpw(request.POST['password'].encode(), user[0].password.encode()):
                 if 'email' not in request.session:
                     request.session['email']=user[0].email
-                return redirect('/student_profile')
-            else:
-                return redirect("/")
-        else:
-                return redirect("/")
+                if request.POST["email"] == "ibtisal@axsos.me":
+                    return render(request,"instructor_profile.html")
+                else:
+                    context={
+                                "user":User.objects.get(email=request.session["email"]), 
+                            }
+                    return render(request,"student_profile.html",context)
+
+
+                
+    return redirect("/")
 
 def request(request):
     if "email" not in request.session:
@@ -40,6 +48,9 @@ def request(request):
         models.create_request(request.POST,user)
         return redirect("/student_profile")
 
-
+def logout(request):
+    request.session.clear()
+    print("lala**************")
+    return redirect('/')
 
 # Create your views here.

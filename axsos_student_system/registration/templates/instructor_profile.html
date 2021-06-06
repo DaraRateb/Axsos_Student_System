@@ -107,8 +107,10 @@
         <nav aria-label="breadcrumb" class="main-breadcrumb">
           <ol style="justify-content: space-between;" class="breadcrumb">
             <img width="200" height="" src="https://academy.axsos.ps/wp-content/uploads/2020/11/cropped-PM-Office-and-AXSOS-Academy-logo.png" class="custom-logo"
-            <li style="height:20px ;margin: 10px;" class="breadcrumb-item"><a class="nav_con" href="#">logout</a></li>
           </ol>
+          <form action="/logout">
+            <input type="submit" name="logout" value="Logout">
+          </form>
         </nav>
         <!-- /Breadcrumb -->
 
@@ -131,9 +133,9 @@
 
                   </form>
                   <div class="mt-3">
-                    <h4>John Doe</h4>
+                    <h4>{{instructor.full_name}}</h4>
                     <p class="text-secondary mb-1">Full Stack Developer</p>
-                    <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                    <p class="text-muted font-size-sm">Palestine</p>
 
 
                   </div>
@@ -186,7 +188,7 @@
                     <h6 class="mb-0">Full Name</h6>
                   </div>
                   <div class="col-sm-9 text-secondary">
-                    {{Kenneth Valdez}}
+                    {{instructor.full_name}}
                   </div>
                 </div>
                 <hr>
@@ -195,21 +197,37 @@
                     <h6 class="mb-0">Email</h6>
                   </div>
                   <div class="col-sm-9 text-secondary">
-                    {{fip@jukmuh.al}}
+                    {{instructor.email}}
                   </div>
                 </div>
                 <hr>
-                
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Phone</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    {{instructor.phone_number}}
+                  </div>
+                </div>
+                <hr>
                 <div class="row">
                   <div class="col-sm-3">
                     <h6 class="mb-0">Mobile</h6>
                   </div>
                   <div class="col-sm-9 text-secondary">
-                    {{(320) 380-4539}}
+                    (320) 380-4539
                   </div>
                 </div>
                 <hr>
-                
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Address</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    Bay Area, San Francisco, CA
+                  </div>
+                </div>
+                <hr>
 
               </div>
             </div>
@@ -223,7 +241,7 @@
                 </div>
 
               </div>
-                <!-- the date input -->
+
               <input placeholder="type here" type="date" class="form-control" style="width: 50%;"
                 aria-label="Text input with radio button">
                 <a style="margin: 0px 0px 0px 10px;" class="btn btn-info " target="__blank" href="/">Request</a>
@@ -238,13 +256,15 @@
                   excuse for absence :<input style="width: 70%;" type="radio"
                     aria-label="Radio button for following text input">
                 </div>
-                      <!-- input for  -->
+
               </div>
               <input style="width: 50%;" placeholder="type here" type="text" class="form-control"
                 aria-label="Text input with radio button">
               
             </div>
-            
+            <!-- for the date -->
+
+            <!-- the send button  -->
             <br>
 
 
