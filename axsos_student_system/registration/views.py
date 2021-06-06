@@ -37,7 +37,7 @@ def request(request):
         return redirect("/")
     if request.method=="POST":
         user = models.User.objects.get(email =request.session['email'] )
-        # models.create_request(request.POST,user)
+        models.create_request(request.POST,user)
         return redirect("/student_profile")
 
 

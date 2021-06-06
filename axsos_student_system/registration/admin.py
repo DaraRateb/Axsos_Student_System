@@ -6,7 +6,6 @@ from registration.models import User
 
 
 admin.site.site_header="Axsos Academy Admin Site"
-admin.site.register(Role)
 admin.site.register(User)
 
 
