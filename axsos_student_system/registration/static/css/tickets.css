@@ -1,0 +1,44 @@
+.btn-sq-lg {
+    width: 250px !important;
+    height: 300px !important;
+  
+  }
+  .container{
+    height: 1000px;
+  }
+
+  .header{
+      height: 30%;
+      background-color: #4e575c;
+      color: white;
+  }
+  
+  .btn-sq {
+    width: 100px !important;
+    height: 100px !important;
+    font-size: 10px;
+  }
+  
+  .btn-sq-sm {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 10px;
+  }
+  
+  .btn-sq-xs {
+    width: 25px !important;
+    height: 25px !important;
+    padding:2px;
+  }
+ 
+  /*footer*/
+.col_white_amrc { color:#FFF;}
+footer {
+     width:100%; 
+     background-color:#263238; 
+     min-height:10px; 
+     padding:10px ;
+    }
+/* .pt2 { padding-top:40px ; margin-bottom:20px ;} */
+footer p { font-size:13px; color:#CCC; padding-bottom:0px; margin-bottom:8px;}
+

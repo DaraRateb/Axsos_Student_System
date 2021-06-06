@@ -7,12 +7,16 @@ def home(request):
     return render(request,'login.html')
 
 def student(request):
-    if "email" in request.session:
-        if request.session['email']=="ibtisal@axsos.me":
-            return render(request,"instructor_profile.html")
-        else:
-            return render(request,"student_profile.html")
-    return redirect("/")
+    if "email" not in request.session:
+        return redirect("/")
+    context={
+        "user":User.objects.get(email=request.session["email"]), 
+    }
+    if request.session['email']=="ibtisal@axsos.me":
+        return render(request,"instructor_profile.html",context)
+    else:
+        return render(request,"student_profile.html",context)
+    
 
 def login(request):
     if request.method=="POST":
@@ -27,6 +31,15 @@ def login(request):
                 return redirect("/")
         else:
                 return redirect("/")
+
+def request(request):
+    if "email" not in request.session:
+        return redirect("/")
+    if request.method=="POST":
+        user = models.User.objects.get(email =request.session['email'] )
+        # models.create_request(request.POST,user)
+        return redirect("/student_profile")
+
 
 
 # Create your views here.
