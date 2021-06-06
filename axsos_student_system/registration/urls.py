@@ -10,4 +10,5 @@ urlpatterns = [
     path('instructor',views.instructor),
     path('attendance',views.attendance),
     path('tickets',views.tickets),
+    path('respond',views.respond),
 ]

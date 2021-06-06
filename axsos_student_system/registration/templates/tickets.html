@@ -44,8 +44,10 @@
                       {{i.description}} <br>
                       #days absence
                       <br><br><br><br><br><br>
-                      <button type="button" class="btn btn-success">Approve</button>
-                      <button type="button" class="btn btn-danger">Reject</button>
+                      <form action="/respond" method="POST">
+                      <button type="button" value="respond" name="approve" class="btn btn-success">Approve</button>
+                      <button type="button" value="respond" name="reject" class="btn btn-danger">Reject</button>
+                    </form>
                   </a>
                 </p>
               </div>

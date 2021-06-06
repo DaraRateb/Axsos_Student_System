@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from . import models
-from .models import User,Request
+from .models import User,Request,RequestStatus
 import bcrypt
 
 def home(request):
@@ -53,6 +53,13 @@ def tickets(request):
         "requests":models.Request.objects.all()
     }
     return render(request,"tickets.html",context)
+
+def respond(request):
+    if request.method=="POST":
+        if request.POST["respond"]=="approve":
+            RequestStatus.status_foreign.add(status="approved")
+        if request.POST["respond"]=="reject":
+            RequestStatus.status_foreign.add(status="rejected")
 
 def logout(request):
     request.session.clear()
