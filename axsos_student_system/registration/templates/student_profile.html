@@ -135,9 +135,9 @@
 
                   </form>
                   <div class="mt-3">
-                    <h4>John Doe</h4>
+                    <h4>{{user.first_name}} {{user.last_name}}</h4>
                     <p class="text-secondary mb-1">Full Stack Developer</p>
-                    <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                    <p class="text-muted font-size-sm">Palestine</p>
 
 
                   </div>
@@ -237,7 +237,10 @@
 
 
             <textarea style="overflow: scroll; padding: 5px ;margin: 20px;width: 100% ;top: 60px ; height: 142px;  " name="text" id="" cols="30"
-              rows="10">{{ request.session.img}} {{ request.session.img}}</textarea>
+              rows="10">{% for i in requests %}
+             * off requested on: {{i.date}}, excuse: {{i.description}}
+              {% endfor %}
+              </textarea>
 
 
 

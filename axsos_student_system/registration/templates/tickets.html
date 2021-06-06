@@ -1,53 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="tickets.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <!-- {% load static %} -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">   
-    <title>Off Requests</title>
+    <title>Document</title>
 </head>
-<body>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        {% load static %}
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">   
-        <title>Off Requests</title>
-    </head>
-    <body>
-        
-        <div id="site-header-inner" class="clr container">
-            <a href="">Log Out</a>
+
+<body  style="background-image: url(8.png); background-size: 100% 100%; background-repeat: no-repeat;">
+
+ 
     
-            <div id="site-logo" class="clr" itemscope="" itemtype="https://schema.org/Brand%22%3E
     
-            <div id="site-logo-inner" class="clr">
-    
-            <a href="https://academy.axsos.ps/" class="custom-logo-link" rel="home" aria-current="page"><img width="200" height="" src="https://academy.axsos.ps/wp-content/uploads/2020/11/cropped-PM-Office-and-AXSOS-Academy-logo.png" class="custom-logo" alt="AXSOS Academy" srcset="https://academy.axsos.ps/wp-content/uploads/2020/11/cropped-PM-Office-and-AXSOS-Academy-logo.png 1x, https://academy.axsos.ps/wp-content/uploads/2020/11/PM-Office-and-AXSOS-Academy-logo.png 2x"></a>
-            </div><!-- #site-logo-inner -->
-            </div><!-- #site-logo -->
+        <div class="header"> 
+    <a href="https://academy.axsos.ps/" class="custom-logo-link" rel="home" aria-current="page"><img width="200"
+            height=""
+            src="https://academy.axsos.ps/wp-content/uploads/2020/11/cropped-PM-Office-and-AXSOS-Academy-logo.png"
+            class="custom-logo" alt="AXSOS Academy"
+            srcset="https://academy.axsos.ps/wp-content/uploads/2020/11/cropped-PM-Office-and-AXSOS-Academy-logo.png 1x, https://academy.axsos.ps/wp-content/uploads/2020/11/PM-Office-and-AXSOS-Academy-logo.png 2x"></a>
+        <div style="float: right;margin-right: 30px; margin-top: 15px; justify-content: space-between; ">
+            
+            
+            <button type="button" class="btn btn-secondary"><a href="">Back</a></button>
+            <button type="button" class="btn btn-secondary"><a href=""> LogOut</a></button>
         </div>
+        </div>
+
     
-    
-    
-    </nav>
-        <div class="card text-white bg-warning mb-3"  style="max-width: 25rem;">
-            <div class="card-header">Student.name</div>
-            <div class="card-body">
-                <h4 class="card-title"><input type="date" name="date" value="off-date"></h4>
-                <p class="card-text">Excuse</p>
-                <p>Number of Absence Days </p>
-                <button type="button" class="btn btn-success">Approve</button> <button type="button" class="btn btn-danger">Reject</button>
-            </div>
-    </body>
-    </html>
+        {% for i in requests %}
+        <div class="container">
+            <div class="row">
+              <div class="col-lg-12">
+                <p>
+                  <a href="#" class="btn btn-sq-lg btn-warning" style="margin: 10px; "> 
+                      <i class="fa fa-user fa-5x"></i><br/>
+                        {{i.user_request.first_name}} {{i.user_request.last_name}} <br>
+                      {{i.date}} <br>
+                      {{i.description}} <br>
+                      #days absence
+                      <br><br><br><br><br><br>
+                      <button type="button" class="btn btn-success">Approve</button>
+                      <button type="button" class="btn btn-danger">Reject</button>
+                  </a>
+                </p>
+              </div>
+          </div>
+          {% endfor %}
+        
+        
+      </div>
+      <footer class="footer">
+      <!--foote_bottom_ul_amrc ends here-->
+<p style="height: 30px;" class="text-center">Copyright @2021 | Designed With by <a href="#">Axsos</a></p>
+
+<!--social_footer_ul ends here-->
+</footer>
+
 </body>
+
 </html>

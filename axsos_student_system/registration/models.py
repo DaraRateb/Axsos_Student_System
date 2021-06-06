@@ -52,3 +52,6 @@ def create_request(info,user):
     Request.objects.create(date=info["date"],description=info["description"],user_request=user)
     return Request.objects.last()
 
+def get_request(info,user):
+    Request.objects.filter(date=info["date"],description=info["description"],user_request=user)
+    return Request.objects.all()
